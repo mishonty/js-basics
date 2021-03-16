@@ -1,14 +1,17 @@
 // 1. USD to BGN
 function usdToBgn(input) {
-    let usd = Number(input);
+    usd = Number(input[0]);
+    
     let bgn = usd * 1.79549;
+    
     console.log(bgn);
 }
 
 
 // 2. Radians to degrees
 function convert(input) {
-    let rad = Number(input);
+    rad = Number(input[0]);
+    
     let degree = rad * 180 / Math.PI;
     console.log(degree.toFixed(0));
 }
@@ -16,10 +19,9 @@ function convert(input) {
 
 // 3. Deposit calculator
 function solve(input) {
-
-    let depositedSum = Number(input[0]);
-    let period = Number(input[1]);
-    let percent = Number(input[2]);
+    depositedSum = Number(input[0]);
+    period = Number(input[1]);
+    percent = Number(input[2]);
 
     let result = depositedSum + period * ((depositedSum * percent / 100) / 12);
 
@@ -29,10 +31,9 @@ function solve(input) {
 
 // 4. Vacation book list
 function solve(input) {
-
-    let nbPages = Number(input[0]);
-    let pagesPerHour = Number(input[1]);
-    let days = Number(input[2]);
+    nbPages = Number(input[0]);
+    pagesPerHour = Number(input[1]);
+    days = Number(input[2]);
 
     let hours = nbPages / pagesPerHour;
 
@@ -49,6 +50,7 @@ function birthday(rent) {
     let animator = rent * 1/3;
 
     let totalPrice = rent + cake + drinks + animator;
+    
     console.log(totalPrice)
 }
 
@@ -64,10 +66,7 @@ function charity(input) {
     let cake = 45 * cakesNumber;
     let gofrette = 5.8 * gofrettesNumber;
     let pancake = 3.2 * pancakesNumber;
-
     let finalSum = cake + gofrette + pancake;
-    finalSum = Number(finalSum);
-
     let total = nberChefs * finalSum * days;
     let expenses = total * 1/8;
     let netTotal = total - expenses;
@@ -101,7 +100,6 @@ function market(input) {
 
 // *8. Fish tank
 function aquarium(input){
-
     length = Number(input[0]);
     width = Number(input[1]);
     height = Number(input[2]);
