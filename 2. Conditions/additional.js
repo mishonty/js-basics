@@ -109,3 +109,85 @@ function company(input) {
         console.log(`Not enough time!${Math.floor(final)} hours needed.`);
     }
 }
+
+
+// 6. Pets
+function pets(input) {
+    days = Number(input[0]);
+    foodKg = Number(input[1]);
+    foodDog = Number(input[2]);
+    foodCat = Number(input[3]);
+    foodTurtle = Number(input[4]);
+
+    let foodTurtleKg = foodTurtle / 1000;
+    let totalFood = (foodDog + foodCat + foodTurtleKg) * days;
+    let final = Math.abs(foodKg - totalFood);
+
+    if (foodKg >= totalFood) {
+        console.log(`${Math.floor(final)} kilos of food left.`);
+    } else {
+        console.log(`${Math.ceil(final)} more kilos of food are needed.`);
+    }
+}
+
+
+// 7. Flower shop
+function shop(input) {
+    magnolia = Number(input[0]);
+    hyacinth = Number(input[1]);
+    rose = Number(input[2]);
+    cactus = Number(input[3]);
+    price = Number(input[4]);
+
+    let magnoliaKg = 3.25;
+    let hyacinthKg = 4;
+    let roseKg = 3.5;
+    let cactusKg = 8;
+
+    let totalSum = (magnolia * magnoliaKg) + (hyacinth * hyacinthKg) + (rose * roseKg) + (cactus * cactusKg);
+    let taxes = totalSum * 0.05;
+    let final = totalSum - taxes;
+    let total = Math.abs(price - final);
+
+    if (final >= price) {
+        console.log(`She is left with ${Math.floor(total)} leva.`);
+    } else {
+        console.log(`She will have to borrow ${Math.ceil(total)} leva.`);
+    }
+}
+
+
+// 8. Fuel tank
+function fueltank(input) {
+    fuel = input[0];
+    n = Number(input[1]);
+
+    let diesel = "diesel";
+    let gasoline = "gasoline";
+    let gas = "gas";
+
+    if (n >= 25) {
+        if (fuel === "Diesel") {
+            console.log(`You have enough ${diesel}.`);
+        } else if (fuel === "Gasoline") {
+            console.log(`You have enough ${gasoline}.`);
+        } else if (fuel === "Gas") {
+            console.log(`You have enough ${gas}.`);
+        } else {
+            console.log(`Invalid fuel!`);
+        }
+    } else {
+        if (fuel === "Diesel") {
+            console.log(`Fill your tank with ${diesel}!`);
+        } else if (fuel === "Gasoline") {
+            console.log(`Fill your tank with ${gasoline}!`);
+        } else if (fuel === "Gas") {
+            console.log(`Fill your tank with ${gas}!`);
+        } else {
+            console.log(`Invalid fuel!`);
+        }
+    }
+}
+
+
+// 9. Fuel tank pt. 2
