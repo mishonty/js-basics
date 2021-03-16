@@ -191,3 +191,39 @@ function fueltank(input) {
 
 
 // 9. Fuel tank pt. 2
+function fueltank(input) {
+    fuelType = input[0];
+    fuelLt = Number(input[1]);
+    clubCard = input[2];
+
+    let final = 0;
+
+    if (fuelType === "Gasoline") {
+        final = fuelLt * 2.22;
+        if (clubCard === "Yes") {
+            final -= fuelLt * 0.18;
+        }
+    } else if (fuelType === "Diesel") {
+        final = fuelLt * 2.33;
+        if (clubCard === "Yes") {
+            final -= fuelLt * 0.12;
+        }
+    } else if (fuelType === "Gas") {
+        final = fuelLt * 0.93;
+        if (clubCard === "Yes") {
+            final -= fuelLt * 0.08;
+        }
+    }
+
+    if (fuelLt > 25) {
+        final *= 0.9;
+        console.log(`${final.toFixed(2)} lv.`);
+    } else if (fuelLt >= 20 && fuelLt <= 25) {
+        final *= 0.92;
+        console.log(`${final.toFixed(2)} lv.`);
+    } else {
+        console.log(`${final.toFixed(2)} lv.`)
+    }
+}
+
+
