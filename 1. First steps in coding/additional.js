@@ -110,7 +110,7 @@ function solve(input) {
 
 // 9. Weather forecast
 function solve(input) {
-    let a = input[0];
+    a = input[0];
 
     if (a == "sunny") {
         console.log("It's warm outside!");
