@@ -55,6 +55,7 @@ function solve(input) {
 
     let workplacesWidthCount = Math.floor(freeWidth / 70);
     let workplacesHeightCount = Math.floor(l / 120);
+    
     let final = workplacesWidthCount * workplacesHeightCount - 3;
 
     console.log(final);
@@ -62,7 +63,21 @@ function solve(input) {
 
 
 // 6. Fishland
+function fishMarket(input) {
+    skumKgPrice = Number(input[0]);
+    cacaKgPrice = Number(input[1]);
+    palamudKg = Number(input[2]);
+    safridKg = Number(input[3]);
+    midiKg = Number(input[4]);
 
+    let palamudKgPrice = skumKgPrice * 1.6;
+    let safridKgPrice = cacaKgPrice * 1.8;
+    let midiKgPrice = 7.5;
+
+    let total = (palamudKgPrice * palamudKg) + (safridKgPrice * safridKg) + (midiKgPrice * midiKg);
+
+    console.log(total.toFixed(2));
+}
 
 
 // 7. House painting
@@ -73,7 +88,6 @@ function solve(input) {
 
     let windows = (2 * 1.2) + (2 * (1.5 * 1.5));
     let greenNeeded = (((2 * (x * x)) + (2 * (x * y))) - windows) / 3.4;
-
     let roof = (2 * ((x * h) / 2)) + (2 * (x * y));
     let roofNeeded = roof / 4.3;
 
