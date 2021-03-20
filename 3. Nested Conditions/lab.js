@@ -1,4 +1,4 @@
-// 1. Day of Week
+// 1. Day of week
 function solve(input) {
     dayNum = Number(input[0]);
     let day = 0;
