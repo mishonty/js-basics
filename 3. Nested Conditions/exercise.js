@@ -284,4 +284,70 @@ function solve(input) {
 }
 
 
-// *8. 
+// *8. On time for the exam
+function solve(input) {
+    h = Number(input[0]);
+    m = Number(input[1]);
+    hArrival = Number(input[2]);
+    mArrival = Number(input[3]);
+
+    let totalTime = (h * 60) + m;
+    let totalTimeArrival = (hArrival * 60) + mArrival;
+    let result = Math.abs(totalTime - totalTimeArrival);
+
+    if ((totalTime - totalTimeArrival) >= 0 && (totalTime - totalTimeArrival) <= 30) {
+        console.log("On time");
+        console.log(`${result} minutes before the start`);
+    } else if (totalTime > totalTimeArrival) {
+        console.log(`Early`);
+        if (result >= 60) {
+            let newHour = Math.trunc(result / 60);
+            let newMinutes = result % 60;
+            if (newMinutes < 10) {
+                console.log(`${newHour}:0${newMinutes} hours before the start`);
+            } else {
+                console.log(`${newHour}:${newMinutes} hours before the start`);
+            }
+        } else {
+            console.log(`${result} minutes before the start`);
+        }
+    } else if (totalTime < totalTimeArrival) {
+        console.log(`Late`);
+        if (result >= 60) {
+            let newHour = Math.trunc(result / 60);
+            let newMinutes = result % 60;
+            if (newMinutes < 10) {
+                console.log(`${newHour}:0${newMinutes} hours after the start`);
+            } else {
+                console.log(`${newHour}:${newMinutes} hours after the start`);
+            }
+        } else {
+            console.log(`${result} minutes after the start`);
+        }
+    } else {
+        console.log(`On time`);
+    }
+}
+
+
+// *9. Volleyball
+function solve(input) {
+    year = input[0];
+    p = Number(input[1]);
+    h = Number(input[2]);
+
+    
+    let weekendsInSofia = 48 - h;
+    let weekendPlaysInSofia = (weekendsInSofia * 3) / 4;
+    let playsInHometown = h;
+    let playsPublicHollidays = (p * 2) / 3;
+
+    let totalPlays = weekendPlaysInSofia + playsInHometown + playsPublicHollidays;
+
+    if (year === "leap") {
+        totalPlays = totalPlays + (totalPlays * 0.15);
+    }
+
+    console.log(Math.trunc(totalPlays));
+
+}
