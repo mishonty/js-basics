@@ -157,7 +157,7 @@ function shop(input) {
 }
 
 
-// 8. Fuel tank
+// *8. Fuel tank
 function fueltank(input) {
     fuel = input[0];
     n = Number(input[1]);
@@ -190,7 +190,7 @@ function fueltank(input) {
 }
 
 
-// 9. Fuel tank pt. 2
+// *9. Fuel tank pt. 2
 function fueltank(input) {
     fuelType = input[0];
     fuelLt = Number(input[1]);
