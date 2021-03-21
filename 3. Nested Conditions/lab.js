@@ -331,3 +331,121 @@ function solve(input) {
     console.log(price);
 
 }
+
+
+// 12. Trade commissions
+function solve(input) {
+    city = input[0];
+    sales = Number(input[1]);
+
+    let result = 0;
+    let error = "error";
+
+    if (sales >= 0 && sales <= 500) {
+        switch (city) {
+            case "Sofia":
+                result = (sales * 0.05).toFixed(2);
+                break;
+            case "Varna":
+                result = (sales * 0.045).toFixed(2);
+                break;
+            case "Plovdiv":
+                result = (sales * 0.055).toFixed(2);
+                break;
+            default:
+                result = error;
+                break;
+        }
+    } else if (sales > 500 && sales <= 1000) {
+        switch (city) {
+            case "Sofia":
+                result = (sales * 0.07).toFixed(2);
+                break;
+            case "Varna":
+                result = (sales * 0.075).toFixed(2);
+                break;
+            case "Plovdiv":
+                result = (sales * 0.08).toFixed(2);
+                break;
+            default:
+                result = error;
+        }
+    } else if (sales > 1000 && sales <= 10000) {
+        switch (city) {
+            case "Sofia":
+                result = (sales * 0.08).toFixed(2);
+                break;
+            case "Varna":
+                result = (sales * 0.1).toFixed(2);
+                break;
+            case "Plovdiv":
+                result = (sales * 0.12).toFixed(2);
+                break;
+            default:
+                result = error;
+                break;
+        }
+    } else if (sales > 10000) {
+        switch (city) {
+            case "Sofia":
+                result = (sales * 0.12).toFixed(2);
+                break;
+            case "Varna":
+                result = (sales * 0.13).toFixed(2);
+                break;
+            case "Plovdiv":
+                result = (sales * 0.145).toFixed(2);
+                break;
+            default:
+                result = error;
+                break;
+        }
+    } else if (sales < 0) {
+        result = error;
+    }
+
+    console.log(result);
+
+}
+
+
+// *13. Ski trip
+function solve(input) {
+    days = Number(input[0]);
+    type = input[1];
+    feedback = input[2];
+
+    days = days - 1;
+    let price = 0;
+
+    if (type === "apartment") {
+        price = 25;
+        if (days > 15) {
+            price *= 0.5;
+        } else if (days >= 10) {
+            price *= 0.65;
+        } else {
+            price *= 0.7;
+        }
+    } else if (type === "president apartment") {
+        price = 35;
+        if (days > 15) {
+            price *= 0.8;
+        } else if (days >= 10 && days <= 15) {
+            price *= 0.85;
+        } else {
+            price *= 0.9;
+        }
+    } else {
+        price = 18;
+    }
+
+    if (feedback === "positive") {
+        price = price + (price * 0.25);
+    } else if (feedback === "negative") {
+        price = price - (price * 0.1);
+    }
+
+    console.log((days * price).toFixed(2));
+
+}
