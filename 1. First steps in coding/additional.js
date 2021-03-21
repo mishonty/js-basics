@@ -108,7 +108,7 @@ function solve(input) {
 }
 
 
-// 9. Weather forecast
+// *9. Weather forecast
 function solve(input) {
     a = input[0];
 
@@ -120,7 +120,7 @@ function solve(input) {
 }
 
 
-// 10. Weather forecast pt. 2
+// *10. Weather forecast pt. 2
 function solve(input) {
     a = input[0];
 
