@@ -257,3 +257,77 @@ function solve(input) {
 
 
 // 11. Fruit shop
+function solve(input) {
+    fruit = input[0];
+    day = input[1];
+    quantity = Number(input[2]);
+    let price = 0;
+    let error = "error";
+
+    switch (day) {
+        case "Monday":
+        case "Tuesday":
+        case "Wednesday":
+        case "Thursday":
+        case "Friday":
+            switch (fruit) {
+                case "banana":
+                    price = (quantity * 2.5).toFixed(2);
+                    break;
+                case "apple":
+                    price = (quantity * 1.2).toFixed(2);
+                    break;
+                case "orange":
+                    price = (quantity * 0.85).toFixed(2);
+                    break;
+                case "grapefruit":
+                    price = (quantity * 1.45).toFixed(2);
+                    break;
+                case "kiwi":
+                    price = (quantity * 2.7).toFixed(2);
+                    break;
+                case "pineapple":
+                    price = (quantity * 5.5).toFixed(2);
+                    break;
+                case "grapes":
+                    price = (quantity * 3.85).toFixed(2);
+                    break;
+                default:
+                    price = error;
+                    break;
+            }
+            break;
+        case "Saturday":
+        case "Sunday":
+            switch (fruit) {
+                case "banana":
+                    price = (quantity * 2.7).toFixed(2);
+                    break;
+                case "apple":
+                    price = (quantity * 1.25).toFixed(2);
+                    break;
+                case "orange":
+                    price = (quantity * 0.9).toFixed(2);
+                    break;
+                case "grapefruit":
+                    price = (quantity * 1.6).toFixed(2);
+                    break;
+                case "kiwi":
+                    price = (quantity * 3).toFixed(2);
+                    break;
+                case "pineapple":
+                    price = (quantity * 5.6).toFixed(2);
+                    break;
+                case "grapes":
+                    price = (quantity * 4.2).toFixed(2);
+                    break;
+            }
+            break;
+        default:
+            price = error;
+            break;
+    }
+
+    console.log(price);
+
+}
