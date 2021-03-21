@@ -106,7 +106,7 @@ function solve(input) {
 }
 
 
-// 6. Godzilla vs. Kong
+// *6. Godzilla vs. Kong
 function solve(input) {
     budget = Number(input[0]);
     statistsNumber = Number(input[1]);
@@ -135,7 +135,7 @@ function solve(input) {
 }
 
 
-/ 7. World swimming record
+/ *7. World swimming record
 function solve(input) {
     recordSeconds = Number(input[0]);
     lenght = Number(input[1]);
