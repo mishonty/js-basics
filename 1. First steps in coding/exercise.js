@@ -41,7 +41,7 @@ function solve(input) {
 }
 
 
-// 5. Birthday party
+// *5. Birthday party
 function birthday(rent) {
     rent = Number(rent);
 
