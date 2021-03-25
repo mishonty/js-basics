@@ -104,3 +104,201 @@ function solve(input) {
 
 
 // 4. Car to go
+function solve(input) {
+    budget = Number(input[0]);
+    season = input[1];
+
+    let venchileClass = 0;
+    let venchileType = 0;
+    let price = 0;
+
+    if (season === "Summer") {
+        venchileType = "Cabrio";
+    } else {
+        venchileType = "Jeep";
+    }
+
+    if (budget > 500) {
+        venchileClass = "Luxury class";
+        venchileType = "Jeep";
+        price = budget * 0.9;
+    } else if (budget > 100) {
+        venchileClass = "Compact class";
+        switch (season) {
+            case "Summer":
+                price = budget * 0.45;
+                break;
+            case "Winter":
+                price = budget * 0.8;
+                break;
+        }
+    } else {
+        venchileClass = "Economy class";
+        switch (season) {
+            case "Summer":
+                price = budget * 0.35;
+                break;
+            case "Winter":
+                price = budget * 0.65;
+                break;
+        }
+    }
+
+    console.log(venchileClass);
+    console.log(`${venchileType} - ${price.toFixed(2)}`);
+
+}
+
+
+// 5. Vacation
+function solve(input) {
+    budget = Number(input[0]);
+    season = input[1];
+
+    let price = 0;
+
+    if (season === "Summer") {
+        location = "Alaska";
+    } else {
+        location = "Morocco";
+    }
+
+    if (budget <= 1000) {
+        accommodation = "Camp";
+        if (season === "Summer") {
+            price = budget * 0.65;
+        } else {
+            price = budget * 0.45;
+        }
+    } else if (budget > 1000 && budget <= 3000) {
+        accommodation = "Hut";
+        if (season === "Summer") {
+            price = budget * 0.8;
+        } else {
+            price = budget * 0.6;
+        }
+    } else {
+        accommodation = "Hotel";
+        price = budget * 0.9;
+
+    }
+
+    console.log(`${location} - ${accommodation} - ${price.toFixed(2)}`);
+
+}
+
+
+// Truck driver
+function solve(input) {
+    season = input[0];
+    kmPerMonth = Number(input[1]);
+
+    let priceKm = 0;
+
+    if (kmPerMonth <= 5000) {
+        if (season === "Spring" || season === "Autumn") {
+            priceKm = 0.75;
+        } else if (season === "Summer") {
+            priceKm = 0.9;
+        } else {
+            priceKm = 1.05;
+        }
+    } else if (kmPerMonth <= 10000) {
+        if (season === "Spring" || season === "Autumn") {
+            priceKm = 0.95;
+        } else if (season === "Summer") {
+            priceKm = 1.1;
+        } else {
+            priceKm = 1.25;
+        }
+    } else {
+        priceKm = 1.45;
+    }
+
+    let salary = kmPerMonth * priceKm * 4;
+
+    console.log((salary - (salary * 0.1)).toFixed(2));
+
+}
+
+
+// 7. School camp
+function solve(input) {
+    season = input[0];
+    group = input[1];
+    studentsCount = Number(input[2]);
+    nights = Number(input[3]);
+
+    let pricePerNight = 0;
+    let sport = 0;
+
+    switch (group) {
+        case "boys":
+            if (season === "Winter") {
+                pricePerNight = 9.6;
+                sport = "Judo";
+            } else if (season === "Spring") {
+                pricePerNight = 7.2;
+                sport = "Tennis";
+            } else {
+                pricePerNight = 15;
+                sport = "Football";
+            }
+            break;
+        case "girls":
+            if (season === "Winter") {
+                pricePerNight = 9.6;
+                sport = "Gymnastics";
+            } else if (season === "Spring") {
+                pricePerNight = 7.2;
+                sport = "Athletics";
+            } else {
+                pricePerNight = 15;
+                sport = "Volleyball";
+            }
+            break;
+        case "mixed":
+            if (season === "Winter") {
+                pricePerNight = 10;
+                sport = "Ski";
+            } else if (season === "Spring") {
+                pricePerNight = 9.5;
+                sport = "Cycling";
+            } else {
+                pricePerNight = 20;
+                sport = "Swimming";
+            }
+            break;
+    }
+
+    let finalPrice = pricePerNight * studentsCount * nights;
+
+    if (studentsCount >= 50) {
+        finalPrice *= 0.5;
+    } else if (studentsCount >= 20) {
+        finalPrice *= 0.85;
+    } else if (studentsCount >= 10) {
+        finalPrice *= 0.95;
+    }
+
+    console.log(`${sport} ${finalPrice.toFixed(2)} lv.`);
+
+}
+
+
+// 8. Point on rectangle border
+function solve(input) {
+    x1 = Number(input[0]);
+    y1 = Number(input[1]);
+    x2 = Number(input[2]);
+    y2 = Number(input[3]);
+    x = Number(input[4]);
+    y = Number(input[5]);
+
+    if (((x === x1 || x === x2) && y >= y1 && y <= y2) || ((y === y1 || y === y2) && x >= x1 && x <= x2)) {
+        console.log("Border");
+    } else {
+        console.log("Inside / Outside");
+    }
+    
+}
