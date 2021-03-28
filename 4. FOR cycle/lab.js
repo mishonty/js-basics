@@ -10,7 +10,7 @@ function solve(input) {
 
 // 2. Numbers N... 1 
 function solve(input) {
-    let n = Number(input[0]);
+    n = Number(input[0]);
 
     for (let i = n; i => 1; i--) {
         console.log(i);
@@ -21,7 +21,7 @@ function solve(input) {
 
 // 3. Numbers 1... N with step 3
 function solve(input) {
-    let n = Number(input[0]);
+    n = Number(input[0]);
 
     for (i = 1; i <= n; i += 3) {
         console.log(i);
@@ -32,7 +32,7 @@ function solve(input) {
 
 // 4. Even powers of 2
 function solve(input) {
-    let n = Number(input[0]);
+    n = Number(input[0]);
 
     for (i = 0; i <= n; i += 2) {
         let result = Math.pow(2, i);
@@ -44,7 +44,7 @@ function solve(input) {
 
 // 5. Character sequence
 function solve(input) {
-    let text = input[0];
+    text = input[0];
 
     for (i = 0; i < text.length; i++) {
         let ch = text[i];
@@ -56,7 +56,7 @@ function solve(input) {
 
 // 6. Vowels sum
 function solve(input) {
-    let text = input[0];
+    text = input[0];
     let sum = 0;
 
     for (i = 0; i < text.length; i++) {
