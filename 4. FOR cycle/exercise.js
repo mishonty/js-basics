@@ -1,7 +1,14 @@
 // 1. Numbers ending in 7
+function solve(input) {
 
+    for (let i = 1; i <= 1000; i++) {
+        if (i % 10 === 7) {
+            console.log(i);
+        }
+        
+    }
 
-
+    
 // 2. Multiplication table
 function solve(input) {
     n = Number(input[0]);
