@@ -1,12 +1,13 @@
 // 1. Numbers ending in 7
 function solve(input) {
 
-    for (let i = 1; i <= 1000; i++) {
+    for (let i = 7; i <= 997; i++) {
         if (i % 10 === 7) {
             console.log(i);
         }
-        
     }
+
+}
 
     
 // 2. Multiplication table
@@ -71,7 +72,7 @@ function solve(input) {
 }
 
 
-// 6. Histogram
+// *6. Histogram
 function solve(input) {
     n = Number(input[0]);
     
@@ -106,4 +107,36 @@ function solve(input) {
 }
 
 
-// 7. Divide without reminder
+// *7. Divide without reminder
+function solve(input) {
+    n = Number(input[0]);
+
+    let p1 = 0;
+    let p2 = 0;
+    let p3 = 0;
+
+    let inputLength = input.length;
+
+    for (i = 1; i < inputLength; i++) {
+
+        let num = Number(input[i]);
+
+        if (num % 2 === 0) {
+            p1++;
+        }
+        
+        if (num % 3 === 0) {
+            p2++;
+        }
+        
+        if (num % 4 === 0) {
+            p3++;
+        }
+
+    }
+
+    console.log(`${((p1 / n) * 100).toFixed(2)}%`);
+    console.log(`${((p2 / n) * 100).toFixed(2)}%`);
+    console.log(`${((p3 / n) * 100).toFixed(2)}%`);
+
+}
