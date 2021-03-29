@@ -140,3 +140,34 @@ function solve(input) {
     console.log(`${((p3 / n) * 100).toFixed(2)}%`);
 
 }
+
+
+// *8. Salary
+function solve(input) {
+
+    let tabsNumber = Number(input[0]);
+    let salary = Number(input[1]);
+
+    let penalties = 0;
+    let inputLength = input.length;
+
+    for (let i = 1; i <= inputLength; i++) {
+
+        let tab = input[i];
+
+        if (tab === "Facebook") {
+            penalties += 150;
+        } else if (tab === "Instagram") {
+            penalties += 100;
+        } else if (tab === "Reddit") {
+            penalties += 50;
+        }
+    }
+
+    if (salary <= penalties) {
+        console.log(`You have lost your salary.`);
+    } else {
+        console.log((salary - penalties).toFixed(0));
+    }
+
+}
