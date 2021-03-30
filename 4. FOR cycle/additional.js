@@ -123,3 +123,6 @@ function solve(input) {
     console.log(`Average: ${average.toFixed(2)}`);
     
 }
+
+
+// 5. Game of intervals
