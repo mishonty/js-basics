@@ -186,9 +186,8 @@ function solve(input) {
 
     for (i = 1; i <= months; i++) {
         let electricity = Number(input[i]);
-        let other = electricity + water + internet;
+        let other = (electricity + water + internet) * 1.2;
 
-        other += other * 0.2;
         allElectricity += electricity;
         allOther += other;
     }
