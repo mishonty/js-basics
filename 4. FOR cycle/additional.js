@@ -170,3 +170,38 @@ function solve(input) {
     console.log(`Invalid numbers: ${((invalidNum / n) * 100).toFixed(2)}%`);
 
 }
+
+
+// 6. Bills
+function solve(input) {
+    let months = Number(input[0]);
+
+    let water = 20;
+    let internet = 15;
+    let electricity = 0;
+    let allElectricity = 0;
+    let other = 0;
+    let allOther = 0;
+    let average = 0;
+
+    for (i = 1; i <= months; i++) {
+        let electricity = Number(input[i]);
+        let other = electricity + water + internet;
+
+        other += other * 0.2;
+        allElectricity += electricity;
+        allOther += other;
+    }
+
+    water *= months;
+    internet *= months;
+    average = (water + internet + allElectricity + allOther) / months;
+    
+
+    console.log(`Electricity: ${allElectricity.toFixed(2)} lv`);
+    console.log(`Water: ${water.toFixed(2)} lv`);
+    console.log(`Internet: ${internet.toFixed(2)} lv`);
+    console.log(`Other: ${allOther.toFixed(2)} lv`);
+    console.log(`Average: ${average.toFixed(2)} lv`);
+    
+}
