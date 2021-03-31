@@ -126,3 +126,47 @@ function solve(input) {
 
 
 // 5. Game of intervals
+function solve(input) {
+    let n = Number(input[0]);
+
+    let from0To9 = 0;
+    let from10To19 = 0;
+    let from20To29 = 0;
+    let from30To39 = 0;
+    let from40To50 = 0;
+    let invalidNum = 0;
+    let points = 0;
+
+    for (let i = 1; i <= n; i++) {
+        let num = Number(input[i]);
+
+        if (num < 0 || num > 50) {
+            invalidNum++;
+            points /= 2;
+        } else if (num > 39) {
+            from40To50++;
+            points += 100;
+        } else if (num > 29) {
+            from30To39++;
+            points += 50;
+        } else if (num > 19) {
+            from20To29++;
+            points += num * 0.4;
+        } else if (num > 9) {
+            from10To19++;
+            points += num * 0.3
+        } else {
+            from0To9++;
+            points += num * 0.2;
+        }
+    }
+
+    console.log(points.toFixed(2));
+    console.log(`From 0 to 9: ${((from0To9 / n) * 100).toFixed(2)}%`);
+    console.log(`From 10 to 19: ${((from10To19 / n) * 100).toFixed(2)}%`);
+    console.log(`From 20 to 29: ${((from20To29 / n) * 100).toFixed(2)}%`);
+    console.log(`From 30 to 39: ${((from30To39 / n) * 100).toFixed(2)}%`);
+    console.log(`From 40 to 50: ${((from40To50 / n) * 100).toFixed(2)}%`);
+    console.log(`Invalid numbers: ${((invalidNum / n) * 100).toFixed(2)}%`);
+
+}
