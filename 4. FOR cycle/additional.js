@@ -204,3 +204,48 @@ function solve(input) {
     console.log(`Average: ${average.toFixed(2)} lv`);
     
 }
+
+
+// 7. Football league
+function solve(input) {
+    seats = Number(input[0]);
+    fans = Number(input[1]);
+
+    let sectorApercent = 0;
+    let sectorBpercent = 0;
+    let sectorVpercent = 0;
+    let sectorGpercent = 0;
+
+    let homeFans = 0;
+    let awayFans = 0;
+
+    for (i = 1; i <= fans; i++) {
+        let sector = input[i];
+
+        switch (sector) {
+            case "A":
+                sectorApercent++;
+                homeFans++;
+                break;
+            case "B":
+                sectorBpercent++;
+                homeFans++;
+                break;
+            case "V":
+                sectorVpercent++;
+                awayFans++;
+                break;
+            case "G":
+                sectorGpercent++;
+                awayFans++;
+                break;
+        }
+    }
+
+    console.log(`${((sectorApercent / fans) * 100).toFixed(2)}%`);
+    console.log(`${((sectorBpercent / fans) * 100).toFixed(2)}%`);
+    console.log(`${((sectorVpercent / fans) * 100).toFixed(2)}%`);
+    console.log(`${((sectorGpercent / fans) * 100).toFixed(2)}%`);
+    console.log(`${((fans / seats) * 100).toFixed(2)}%`);
+    
+}
