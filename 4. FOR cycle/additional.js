@@ -211,41 +211,37 @@ function solve(input) {
     seats = Number(input[0]);
     fans = Number(input[1]);
 
-    let sectorApercent = 0;
-    let sectorBpercent = 0;
-    let sectorVpercent = 0;
-    let sectorGpercent = 0;
+    let sectorAfans = 0;
+    let sectorBfans = 0;
+    let sectorVfans = 0;
+    let sectorGfans = 0;
 
-    let homeFans = 0;
-    let awayFans = 0;
 
-    for (i = 1; i <= fans; i++) {
+
+    for (i = 2; i <= fans + 1; i++) {
         let sector = input[i];
 
         switch (sector) {
             case "A":
-                sectorApercent++;
-                homeFans++;
+                sectorAfans++;
                 break;
             case "B":
-                sectorBpercent++;
-                homeFans++;
+                sectorBfans++;
                 break;
             case "V":
-                sectorVpercent++;
-                awayFans++;
+                sectorVfans++;
                 break;
             case "G":
-                sectorGpercent++;
-                awayFans++;
+                sectorGfans++;
                 break;
         }
+
     }
 
-    console.log(`${((sectorApercent / fans) * 100).toFixed(2)}%`);
-    console.log(`${((sectorBpercent / fans) * 100).toFixed(2)}%`);
-    console.log(`${((sectorVpercent / fans) * 100).toFixed(2)}%`);
-    console.log(`${((sectorGpercent / fans) * 100).toFixed(2)}%`);
+    console.log(`${((sectorAfans / fans) * 100).toFixed(2)}%`);
+    console.log(`${((sectorBfans / fans) * 100).toFixed(2)}%`);
+    console.log(`${((sectorVfans / fans) * 100).toFixed(2)}%`);
+    console.log(`${((sectorGfans / fans) * 100).toFixed(2)}%`);
     console.log(`${((fans / seats) * 100).toFixed(2)}%`);
     
 }
