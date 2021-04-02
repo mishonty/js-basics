@@ -245,3 +245,17 @@ function solve(input) {
     console.log(`${((fans / seats) * 100).toFixed(2)}%`);
     
 }
+
+
+// 8.
+
+// 9. Clock
+function solve(input) {
+
+    for (let hours = 0; hours <= 23; hours++) {
+        for (let minutes = 0; minutes < 60; minutes++){
+            console.log(`${hours} : ${minutes}`)
+        }
+    }
+    
+}
