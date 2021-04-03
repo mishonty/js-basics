@@ -72,3 +72,28 @@ function solve(input) {
     }
 
 }
+
+
+// 5. Account balance
+function solve(input) {
+    let deposit = input[0];
+    let index = 1;
+    let balance = 0;
+
+
+    while (deposit !== "NoMoreMoney") {
+        let amount = Number(deposit);
+        if (deposit < 0) {
+            console.log("Invalid operation!");
+            break;
+        }
+        balance += amount;
+
+        console.log(`Increase: ${amount.toFixed(2)}`);
+        deposit = input[index];
+        index++;
+
+    }
+    console.log(`Total: ${balance.toFixed(2)}`);
+
+}
