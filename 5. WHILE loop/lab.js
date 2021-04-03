@@ -16,3 +16,25 @@ function solve(input) {
     }
 
 }
+
+
+// 2. Password
+function solve(input) {
+    let username = input[0];
+    let password = input[1];
+
+    let index = 2;
+    let credentials = input[index];
+    index++;
+
+    while (credentials !== password) {
+        credentials = input[index];
+        index++;
+    }
+
+    console.log(`Welcome Nakov!`);
+
+}
+
+
+// 3.
