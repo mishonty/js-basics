@@ -32,7 +32,7 @@ function solve(input) {
         index++;
     }
 
-    console.log(`Welcome Nakov!`);
+    console.log(`Welcome ${username}!`);
 
 }
 
