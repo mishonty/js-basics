@@ -38,3 +38,37 @@ function solve(input) {
 
 
 // 3.
+function solve(input) {
+    let n = Number(input[0]);
+
+    let index = 1;
+    let result = 0;
+
+    while (result < n) {
+        num = Number(input[index]);
+        index++;
+
+        result += num;
+
+
+    }
+
+    console.log(result);
+
+}
+
+
+// 4. 
+function solve(input) {
+    let n = Number(input[0]);
+
+    let index = 1;
+
+    while (index < n) {
+        console.log(index);
+
+        index = index * 2 + 1;
+
+    }
+
+}
