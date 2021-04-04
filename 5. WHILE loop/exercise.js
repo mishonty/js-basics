@@ -113,6 +113,47 @@ function solve(input) {
 
 }
 
+// второ решение
+function solve(input) {
+    var goal = Number(input[0]);
+    var current = Number(input[1]);
+    var days = 0;
+    var spendDaysInARow = 0;
+
+    for (var i = 0; i < (input.length - 2) / 2; i++) {
+        let action = input[2 + 2 * i];
+        let ammount = Number(input[3 + 2 * i]);
+
+        days++;
+
+        if (action == "spend") {
+
+            if (current < ammount) {
+                current = 0;
+            } else {
+                current -= ammount;
+            }
+            spendDaysInARow++;
+
+            if (spendDaysInARow == 5) {
+                console.log("You can't save the money.");
+                console.log(days);
+                break;
+            }
+        }
+        if (action == "save") {
+            current += ammount;
+            spendDaysInARow = 0;
+
+            if (current >= goal) {
+                console.log("You saved the money for " + days + " days.");
+                break;
+            }
+
+        }
+    }
+}
+
 
 // 4. Walking
 /* Габи иска да започне здравословен начин на живот и си е поставила за цел да върви 10 000 стъпки всеки ден. 
