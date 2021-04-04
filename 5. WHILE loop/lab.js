@@ -161,3 +161,38 @@ function solve(input) {
 В случай, че ученикът е изключен от училище, да се отпечата:
 "{име на ученика} has been excluded at {класа, в който е бил изключен} grade"
 Стойността трябва да бъде форматирана до втория знак след десетичната запетая. */
+function solve(input) {
+    let index = 0;
+    let name = input[index];
+    index++;
+
+    let grade = 1;
+    let average = 0;
+    let fail = 0;
+
+    while (grade <= 12) {
+        let gpa = Number(input[index]);
+        index++;
+
+        if (gpa >= 4.00) {
+            grade++;
+            average += grade;
+            continue;
+        } else {
+            fail++;
+        }
+
+        if (fail > 1) {
+            console.log(`${name} has been excluded at ${grade} grade`);
+            break;
+        }
+
+    }
+
+    average = average / 12;
+
+    console.log(`${name} graduated. Average grade: ${average.toFixed(2)}`);
+
+}
+
+
