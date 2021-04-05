@@ -1,6 +1,6 @@
 // 1.
 // 2.
-/ * На благотворително събитие плащанията за закупените продукти винаги се редуват: плащане в брой и плащане с карта. 
+/* На благотворително събитие плащанията за закупените продукти винаги се редуват: плащане в брой и плащане с карта. 
 Установени са следните правила за заплащане:
 Ако продуктът надвишава 100лв., за него не може да се плати в брой
 Ако продуктът е на цена под 10лв., за него не може да се плати с кредитна карта
@@ -27,45 +27,46 @@ function solve(input) {
 
     let totalSumCash = 0;
     let totalSumCard = 0;
-    let totalSum = 0;
     let cashTransaction = 0;
     let cardTransaction = 0;
+    let sum = 0;
 
 
-    while (command !== "End" && totalSum < expectedSum) {
+    while (command !== "End" && sum < expectedSum) {
         let itemPrice = Number(input[i]);
-        i++;
 
-        if (i % 2 === 0){
+        if (input[i] === "End") {
+            console.log(`Failed to collect required money for charity.`);
+            break;
+        }
+        i++; /////// ЗАЩО
+
+        if (i % 2 === 0) {
             if (itemPrice > 100) {
-                console.log (`Error in transaction!`);
+                console.log(`Error in transaction!`);
             } else {
-                totalSumCash += itemPrice;
-                totalSum += totalSumCash;
-                cashTransaction++;
                 console.log(`Product sold!`);
+                cashTransaction++;;
+                totalSumCash += itemPrice;
+                sum = totalSumCash + totalSumCard;
             }
-
         } else {
             if (itemPrice < 10) {
-                console.log (`Error in transaction!`);
+                console.log(`Error in transaction!`);
             } else {
-                totalSumCard += itemPrice;
-                totalSum += totalSumCard;
-                cardTransaction++;
                 console.log(`Product sold!`);
+                cardTransaction++;
+                totalSumCard += itemPrice;
+                sum = totalSumCash + totalSumCard;
             }
         }
-    }
 
-        if (totalSum >= expectedSum) {
+        if (sum >= expectedSum) {
             let averageCash = totalSumCash / cashTransaction;
             let averageCard = totalSumCard / cardTransaction;
             console.log(`Average CS: ${averageCash.toFixed(2)}`);
             console.log(`Average CC: ${averageCard.toFixed(2)}`);
-        }
 
-        if (command === "End"){
-            console.log(`Failed to collect required money for charity.`);
         }
+    }
 }
