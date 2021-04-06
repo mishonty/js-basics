@@ -35,6 +35,35 @@ function solve(input) {
 
 }
 
+function solve(input) {
+    let book = input[0];
+    let i = 1;
+    let command = input[i];
+    
+
+    let bookCount = 0;
+
+    while (command !== "No More Books") {
+        let nextBook = input[i];
+        
+        i++;
+        if (nextBook === book) {
+            console.log(`You checked ${bookCount} books and found it.`);
+            break;
+        } else {
+            
+        }
+
+        if (nextBook === "No More Books") {
+            console.log(`The book you search is not here!`);
+            console.log(`You checked ${bookCount} books.`);
+            break;
+        }
+        bookCount++;
+    }
+    
+}
+
 // 2. Exam preparation
 /* Напишете функция, в която Марин решава задачи от изпити докато не получи съобщение "Enough" от лектора си. 
 При всяка решена задача той получава оценка. 
@@ -155,6 +184,49 @@ function solve(input) {
     }
 }
 
+
+// трето решение
+function solve(input) {
+    let price = Number(input[0]);
+    let i = 2;
+
+    let totalSum = Number(input[1]);
+
+
+    let daysCount = 0;
+    let daysSpend = 0;
+
+    while (totalSum < price) {
+        
+        let action = input[i++];
+        let actionSum = Number(input[i++]);
+        daysCount++;
+
+        if (action === "spend") {
+            daysSpend++;
+            totalSum -= actionSum;
+            if (totalSum < 0) {
+                totalSum = 0;
+            }
+        } else {
+            daysSpend = 0;
+            totalSum += actionSum;
+        }
+
+        if (totalSum >= price) {
+            console.log(`You saved the money for ${daysCount} days.`);
+            break;
+        }
+
+        if (daysSpend === 5) {
+            console.log(`You can't save the money.`);
+            console.log(daysCount);
+
+        }
+        
+    }
+
+}
 
 // 4. Walking
 /* Габи иска да започне здравословен начин на живот и си е поставила за цел да върви 10 000 стъпки всеки ден. 
