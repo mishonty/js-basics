@@ -82,7 +82,45 @@ function solve(input) {
 ⦁	Ако получи определеният брой незадоволителни оценки:
 ⦁	"You need a break, {брой незадоволителни оценки} poor grades."
 Средната оценка да бъде форматирана до втория знак след десетичната запетая. */
+function solve(input) {
+    i = 0;
+    let badProblemsNum = Number(input[i++]);
 
+    
+    let badGrade = 0;
+    let gradeSum = 0;
+    let allProblemsNum = 0;
+    let lastProblemName = undefined;
+    let average = 0;
+
+    while (lastProblemName !== "Enough") {
+        let problemName = input[i++];
+        let grade = Number(input[i++]);
+        
+
+        if (grade <= 4) {
+            badGrade ++;
+        }
+
+        if (badGrade >= badProblemsNum) {
+            console.log(`You need a break, ${badGrade} poor grades.`);
+            break;
+        }
+
+        if (problemName === "Enough") {
+
+            average = gradeSum / allProblemsNum;
+            console.log(`Average score: ${average.toFixed(2)}`);
+            console.log(`Number of problems: ${allProblemsNum}`);
+            console.log(`Last problem: ${lastProblemName}`);
+        }
+
+        lastProblemName = problemName;
+        gradeSum += grade;
+        allProblemsNum++;
+    }
+
+}
 
 
 // 3. Vacation
